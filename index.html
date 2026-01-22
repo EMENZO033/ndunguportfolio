@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenedy Ndungu | Purchasing & Supply Chain Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --slate: #1e293b;
+            --light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.03);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--dark); color: var(--light); line-height: 1.7; overflow-x: hidden; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
+
+        /* Glassmorphism Background Elements */
+        .blob {
+            position: fixed; width: 500px; height: 500px; background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, rgba(15,23,42,0) 70%);
+            border-radius: 50%; z-index: -1; filter: blur(80px);
+        }
+
+        /* Navigation */
+        nav { padding: 25px 0; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--light); text-decoration: none; }
+        .logo span { color: var(--accent); }
+
+        /* Hero Section */
+        .hero { height: 100vh; display: flex; align-items: center; padding-top: 80px; position: relative; }
+        .hero-text h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(3rem, 8vw, 5rem); line-height: 1.1; margin-bottom: 20px; }
+        .hero-text h1 span { background: linear-gradient(to right, #60a5fa, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tagline { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin-bottom: 40px; }
+
+        /* Button Styling */
+        .btn-group { display: flex; gap: 20px; flex-wrap: wrap; }
+        .btn {
+            padding: 16px 32px; border-radius: 12px; font-weight: 700; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); font-size: 0.95rem;
+        }
+        .btn-primary { background: var(--primary); color: white; border: none; box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4); }
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.6); }
+        .btn-outline { border: 2px solid rgba(255,255,255,0.1); color: white; background: var(--glass); }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--accent); color: var(--accent); }
+
+        /* Sections */
+        section { padding: 120px 0; }
+        .section-header { margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; font-family: 'Space Grotesk', sans-serif; margin-bottom: 10px; }
+        .line { width: 50px; height: 4px; background: var(--accent); border-radius: 2px; }
+
+        /* Experience Grid */
+        .exp-card {
+            background: var(--glass); border: 1px solid rgba(255,255,255,0.05); padding: 40px;
+            border-radius: 24px; transition: var(--transition); position: relative; overflow: hidden;
+        }
+        .exp-card:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); }
+        .exp-card h3 { color: var(--accent); margin-bottom: 5px; }
+        .exp-card .company { font-weight: 600; margin-bottom: 20px; display: block; }
+        .exp-list { list-style: none; }
+        .exp-list li { margin-bottom: 12px; display: flex; gap: 15px; color: #cbd5e1; }
+        .exp-list i { color: var(--primary); margin-top: 5px; }
+
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .skill-item {
+            background: var(--glass); padding: 25px; border-radius: 16px; text-align: center;
+            border: 1px solid rgba(255,255,255,0.05); transition: var(--transition);
+        }
+        .skill-item:hover { transform: scale(1.05); border-color: var(--primary); }
+        .skill-item i { font-size: 2rem; color: var(--accent); margin-bottom: 15px; display: block; }
+
+        /* Contact */
+        .contact-box { background: linear-gradient(135deg, var(--primary), #1e40af); padding: 60px; border-radius: 30px; text-align: center; }
+
+        footer { padding: 40px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #64748b; }
+
+        @media (max-width: 768px) {
+            .hero { text-align: center; height: auto; padding-top: 150px; padding-bottom: 80px; }
+            .btn-group { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blob" style="top: -100px; right: -100px;"></div>
+    <div class="blob" style="bottom: -100px; left: -100px;"></div>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">Kenedy<span>.</span>Gathu</a>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary" style="padding: 10px 20px;">Hire Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <p style="color: var(--accent); font-weight: 700; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase;">Supply Chain Specialist</p>
+                <h1>Kenedy <span>Ndungu</span><br>Gathu</h1>
+                <p class="tagline">
+                    Dedicated Purchasing and Supply Chain graduate from <strong>Dedan Kimathi University of Technology</strong>.
+                    Specializing in inventory control, procurement documentation, and strategic supplier management.
+                </p>
+                <div class="btn-group">
+                    <a href="cv123.docx" target="_blank" class="btn btn-primary"><i class="fas fa-eye"></i> View CV</a>
+                    <a href="cv123.docx" download class="btn btn-outline"><i class="fas fa-download"></i> Download CV</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="exp-card">
+                <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem;">SEP 2023 - JAN 2024</span>
+                <h3>Supply Chain Management Attachee</h3>
+                <span class="company">Kiambu County Government</span>
+                <ul class="exp-list">
+                    <li><i class="fas fa-check-circle"></i> Sourcing, evaluation, and prequalification of suppliers.</li>
+                    <li><i class="fas fa-check-circle"></i> Tendering support and procurement documentation/reporting.</li>
+                    <li><i class="fas fa-check-circle"></i> Managing stock control, inventory, and warehouse operations.</li>
+                    <li><i class="fas fa-check-circle"></i> Asset management, verification, and database maintenance.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" style="background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education</h2>
+                <div class="line"></div>
+            </div>
+            <div class="exp-card" style="border-left: 4px solid var(--primary);">
+                <h3>B. Purchasing & Supply Chain Management</h3>
+                <p><strong>Dedan Kimathi University of Technology</strong> (2022 – 2025)</p>
+                <p style="color: var(--accent); margin-top: 10px;">Second Class Honors (Upper Division)</p>
+                <p style="font-size: 0.9rem; margin-top: 5px;">Minor: Critical Thinking and Communication Skills</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Core Competencies</h2>
+                <div class="line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fas fa-handshake"></i>Negotiation</div>
+                <div class="skill-item"><i class="fas fa-boxes"></i>Inventory Control</div>
+                <div class="skill-item"><i class="fas fa-users"></i>Collaboration</div>
+                <div class="skill-item"><i class="fas fa-file-contract"></i>Procurement Doc</div>
+                <div class="skill-item"><i class="fas fa-lightbulb"></i>Problem Solving</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <div class="contact-box">
+            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 10px;">Ready to Work Together?</h2>
+            <p style="color: rgba(255,255,255,0.8); margin-bottom: 40px;">Currently open to opportunities in Logistics, Procurement, and Supply Chain Management.</p>
+            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                <div style="text-align: left;">
+                    <p style="font-size: 0.8rem; color: var(--accent); font-weight: 700; text-transform: uppercase;">Email Me</p>
+                    <a href="mailto:kendyndungu@gmail.com" style="color: white; text-decoration: none; font-size: 1.2rem;">kendyndungu@gmail.com</a>
+                </div>
+                <div style="text-align: left;">
+                    <p style="font-size: 0.8rem; color: var(--accent); font-weight: 700; text-transform: uppercase;">Call Me</p>
+                    <a href="tel:0111707906" style="color: white; text-decoration: none; font-size: 1.2rem;">+254 111 707 906</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Kenedy Ndungu Gathu. All rights reserved.</p>
+            <p style="font-size: 0.7rem; margin-top: 10px; opacity: 0.5;">Bachelor of Purchasing & Supply Chain Management (DeKUT)</p>
+        </div>
+    </footer>
+
+</body>
+</html>
